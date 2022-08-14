@@ -9,13 +9,7 @@ import { Link } from 'react-router-dom';
 const AdminCard = () => {
   return (
     <Link style={{ textDecoration: 'none' }} to={'/admin'}>
-      <Card
-        sx={{
-          height: 200,
-          width: 350,
-          borderRadius: 5
-        }}
-      >
+      <Card sx={{ height: 200, width: 350 }}>
         <CardActionArea>
           {/* <CardMedia
           component="img"

@@ -6,11 +6,10 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import { Link } from 'react-router-dom';
 
-
 const Guest = () => {
   return (
     <Link style={{ textDecoration: 'none' }} to={'/guest'}>
-      <Card sx={{ height: 200, width: 350, borderRadius: 5 }}>
+      <Card sx={{ height: 200, width: 350 }}>
         <CardActionArea>
           {/* <CardMedia
           component='img'
@@ -26,7 +25,7 @@ const Guest = () => {
               '&:hover': {
                 backgroundColor: 'rgba(28, 105, 144, 0.989)',
                 transition: '200ms ease-in-out',
-              }
+              },
             }}
           >
             <Typography gutterBottom variant='h4' component='div'>

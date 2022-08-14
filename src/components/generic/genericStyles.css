@@ -1,0 +1,11 @@
+.app-loader-container {
+  text-align: center;
+  position: fixed;
+  top: 300px;
+  right: 620px;
+  
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+  /* padding-top: 1.5rem; */
+}

@@ -14,7 +14,7 @@ const TeacherFormModal = ({ open, handleOpen, handleClose }) => {
           size='small'
           onClick={handleOpen}
         >
-          Add New Class
+          Add New Teacher
         </Button>
       </div>
       <FormModal open={open} handleClose={handleClose}>

@@ -17,7 +17,7 @@ const SignInButton = () => {
       variant='contained'
     >
       Sign In
-      <LoginIcon/>
+      <LoginIcon />
     </Button>
   );
 };

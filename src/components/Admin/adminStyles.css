@@ -1,7 +1,6 @@
 .header-container {
   padding: 0.35rem 0 0 0.35rem;
   height: 1rem;
-  /* border: 1px solid white; */
 }
 
 .back-btn {
@@ -14,16 +13,11 @@
 
 .admin-nav {
   height: 2.5rem;
-  /* padding: 0.5rem 0 0 0; */
   display: flex;
   justify-content: space-evenly;
-  /* border-bottom: 0.5px solid #313437; */
 }
 
 .admin-nav-items {
-  /* border-top-left-radius: 0.3rem; */
-  /* border-top-right-radius: 0.3rem; */
-  /* margin: 1rem 1rem 0rem 1rem; */
   border-radius: 0.3rem;
   width: 50vw;
   text-align: center;
@@ -36,13 +30,11 @@
 }
 
 .admin-nav-items.active {
-  /* background-color: #313437; */
   color: rgb(32, 29, 44);
   transition: 100ms ease-in-out;
 }
 
 .admin-nav-items:hover {
-  /* background-color: #6d7277; */
   color: rgb(32, 29, 44);
   transition: 400ms ease-in-out;
 }

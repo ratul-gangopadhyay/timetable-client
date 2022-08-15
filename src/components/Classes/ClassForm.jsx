@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
@@ -140,9 +140,7 @@ const ClassForm = ({
           >
             Submit
           </Button>
-          <span className='form-error'>
-            {formError}
-          </span>
+          <span className='form-error'>{formError}</span>
         </div>
       </form>
     </>

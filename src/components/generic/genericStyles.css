@@ -3,9 +3,12 @@
   position: fixed;
   top: 300px;
   right: 620px;
-  
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
-  /* padding-top: 1.5rem; */
+}
+
+.specializations-error {
+  padding-top: 0.5rem;
+  font-size: small;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: red;
+  font-weight: 700;
 }

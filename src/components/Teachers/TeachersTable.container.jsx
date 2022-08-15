@@ -5,14 +5,9 @@ import './teacherStyles.css';
 import TeachersTable from './TeachersTable';
 import teachersSelector from '../../redux/store/teachers/teachersSelector';
 import * as teachersActions from '../../redux/store/teachers/teachersActions';
-import Chip from '@mui/material/Chip';
-import Stack from '@mui/material/Stack';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
 
 const TeachersTableContainer = () => {
-  const [pageSize, setPageSize] = useState(5);
+  const [pageSize, setPageSize] = useState(15);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -49,13 +44,6 @@ const TeachersTableContainer = () => {
       align: 'left',
       renderCell: (date) => moment(date.value).format('DD-MM-YYYY'),
     },
-    /* {
-      field: 'specializations',
-      headerName: 'Subjects Taught',
-      width: 650,
-      headerAlign: 'left',
-      align: 'left',
-    }, */
   ];
   const rows = useSelector(teachersSelector.teachers.list);
   const loading = useSelector(teachersSelector.teachers.loading);

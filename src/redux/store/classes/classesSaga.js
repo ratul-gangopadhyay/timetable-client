@@ -2,7 +2,7 @@ import { takeLatest, call, put } from 'redux-saga/effects';
 import * as actions from './classesActions';
 import { showSpinner, hideSpinner } from '../common/commonActions';
 import { getClasses, addClass } from '../../../service/classesService';
-import { toast, Slide, Zoom, Flip, Bounce } from 'react-toastify';
+import { toast, Zoom } from 'react-toastify';
 
 export function* fetchClasses() {
   try {
@@ -43,7 +43,6 @@ export function* fetchClasses() {
 export function* insertClass({ payload: { classData } }) {
   try {
     const response = yield call(addClass, classData);
-    // yield put(actions.insertClassSuccess(response.data));
     yield toast.success('Success: Added New Class', {
       position: 'top-right',
       autoClose: 2000,
@@ -56,7 +55,6 @@ export function* insertClass({ payload: { classData } }) {
       transition: Zoom,
     });
     yield put(actions.storeClass(response.data));
-    // yield call(fetchClasses);
   } catch (error) {
     yield toast.error(
       error?.response?.data?.errorMessage || 'Some Error Occurred',

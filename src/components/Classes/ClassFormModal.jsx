@@ -18,7 +18,7 @@ const ClassFormModal = ({ open, handleOpen, handleClose }) => {
         </Button>
       </div>
       <FormModal open={open} handleClose={handleClose}>
-        <ClassFormContainer handleClose={handleClose}/>
+        <ClassFormContainer handleClose={handleClose} />
       </FormModal>
     </>
   );

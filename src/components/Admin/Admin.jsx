@@ -18,7 +18,6 @@ const Admin = ({ onBack }) => {
             Back
           </Button>
         </span>
-        {/* <h1 class='admin-header'> Admin</h1> */}
       </div>
       <AdminNavigatorContainer />
     </>

@@ -2,6 +2,7 @@ import React from 'react';
 import './teacherStyles.css';
 import TeachersTableContainer from './TeachersTable.container';
 import TeacherFormModalContainer from './TeacherFormModal.container';
+import TeacherDataRefreshContainer from './TeacherDataRefresh.container';
 
 const Teachers = () => {
   return (
@@ -11,6 +12,7 @@ const Teachers = () => {
         <TeachersTableContainer />
       </div>
       <TeacherFormModalContainer />
+      <TeacherDataRefreshContainer />
     </div>
   );
 };

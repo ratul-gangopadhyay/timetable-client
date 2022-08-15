@@ -1,19 +1,24 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import MenuItem from '@mui/material/MenuItem';
 import { Button } from '@mui/material';
 import './teacherStyles.css';
+import { DesktopDatePicker } from '@mui/x-date-pickers';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import GenericChipContainer from '../generic/GenericChip.container';
 
 const TeacherForm = ({
   teacher,
-  errMsg,
   handleChange,
-  handleStrengthChange,
   handleReset,
   handleSubmit,
-  standards,
-  sections,
+  handleDateChange,
+  formError,
+  subjects,
+  specializations,
+  handleSpecializations,
+  invalidForm,
 }) => {
   const style = {
     label: {
@@ -50,6 +55,13 @@ const TeacherForm = ({
         fontWeight: 'bolder',
       },
     },
+    '& .MuiButtonBase-root': {
+      color: '#fff',
+    },
+    '& .MuiButtonBase-root:hover': {
+      backgroundColor: '#5c5757',
+      transitionDuration: '450ms',
+    },
   };
   return (
     <>
@@ -59,23 +71,25 @@ const TeacherForm = ({
         <Box
           component='form'
           sx={{
+            padding: '0 1.5rem 0 1.5rem',
             display: 'flex',
             justifyContent: 'space-around',
-            '& .MuiTextField-root': { m: 2, width: '25ch' },
+            '& .MuiTextField-root': { m: 2, width: '50ch' },
           }}
           autoComplete='off'
         >
           <TextField
             sx={style}
             id='Name'
-            name='Name'
+            name='teacherName'
             type='text'
             required
             label='Name'
             value={teacher?.teacherName}
             onChange={handleChange}
-            helperText='Enter Teacher Name'
-          />            
+            helperText={formError?.nameError}
+            error={formError?.nameError}
+          />
           <TextField
             sx={style}
             id='age'
@@ -85,22 +99,63 @@ const TeacherForm = ({
             label='Age'
             value={teacher?.age}
             onChange={handleChange}
-            helperText='Enter age'
+            helperText={formError?.ageError}
+            error={formError?.ageError}
           />
+        </Box>
+        <Box
+          component='form'
+          sx={{
+            padding: '0 1.5rem 0 1.5rem',
+            display: 'flex',
+            justifyContent: 'space-around',
+            '& .MuiTextField-root': { m: 2, width: '50ch' },
+          }}
+          autoComplete='off'
+        >
           <TextField
             sx={style}
-            id='outlined-number'
-            name='dateOfJoining'
-            label='Date of Joining'
-            type='Date'
+            id='salary'
+            name='salary'
+            type='number'
             required
-            value={teacher?.dateOfJoining}
+            label='Salary'
+            value={teacher?.salary}
             onChange={handleChange}
-            helperText={errMsg}
-            error={errMsg}
-            InputLabelProps={{
-              shrink: true,
-            }}
+            error={formError?.salaryError}
+            helperText={formError?.salaryError}
+          />
+          <LocalizationProvider dateAdapter={AdapterDateFns}>
+            <DesktopDatePicker
+              label='Date of Joining'
+              inputFormat='dd/MM/yyyy'
+              value={teacher?.dateOfJoining}
+              onChange={handleDateChange}
+              renderInput={(params) => (
+                <TextField
+                  sx={style}
+                  {...params}
+                  error={formError?.dateError}
+                  helperText={formError?.dateError}
+                />
+              )}
+            />
+          </LocalizationProvider>
+        </Box>
+        <Box
+          component='form'
+          sx={{
+            padding: '0 1.5rem 0 1.5rem',
+            display: 'flex',
+            '& .MuiTextField-root': { m: 2, width: '25ch' },
+          }}
+        >
+          <GenericChipContainer
+            list={subjects}
+            style={style}
+            specializations={specializations}
+            handleSpecializations={handleSpecializations}
+            formError={formError}
           />
         </Box>
         <div>
@@ -125,7 +180,7 @@ const TeacherForm = ({
             variant='contained'
             size='small'
             type='submit'
-            disabled={errMsg}
+            disabled={invalidForm}
           >
             Submit
           </Button>

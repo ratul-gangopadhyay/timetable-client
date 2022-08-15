@@ -1,10 +1,8 @@
-import React from 'react'
-import AdminNavigator from './AdminNavigator'
+import React from 'react';
+import AdminNavigator from './AdminNavigator';
 
 const AdminNavigatorContainer = () => {
-  return (
-    <AdminNavigator/>
-  )
-}
+  return <AdminNavigator />;
+};
 
-export default AdminNavigatorContainer
+export default AdminNavigatorContainer;

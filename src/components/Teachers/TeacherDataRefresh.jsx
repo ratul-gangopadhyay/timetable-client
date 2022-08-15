@@ -1,11 +1,11 @@
 import React from 'react';
 import { Button } from '@mui/material';
-import './classesStyles.css';
+import './teacherStyles.css';
 import RefreshIcon from '@mui/icons-material/Refresh';
 
-const ClassDataRefresh = ({ refresh }) => {
+const TeacherDataRefresh = ({ refresh }) => {
   return (
-    <div className='class-refresh-icon-btn-container'>
+    <div className='teacher-refresh-icon-btn-container'>
       <Button
         sx={{ backgroundColor: '#313437', fontFamily: 'Calibri' }}
         variant='contained'
@@ -18,4 +18,4 @@ const ClassDataRefresh = ({ refresh }) => {
   );
 };
 
-export default ClassDataRefresh;
+export default TeacherDataRefresh;

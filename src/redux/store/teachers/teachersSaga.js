@@ -1,7 +1,7 @@
 import { takeLatest, call, put } from 'redux-saga/effects';
 import * as actions from './teachersActions';
 import { getTeachers, addTeacher } from '../../../service/teachersService';
-import { toast, Slide, Zoom, Flip, Bounce } from 'react-toastify';
+import { toast, Zoom } from 'react-toastify';
 import { showSpinner, hideSpinner } from '../common/commonActions';
 
 export function* fetchTeachers() {
@@ -76,5 +76,5 @@ export function* insertTeacher({ payload: { teacher } }) {
 
 export function* teachersSaga() {
   yield takeLatest(actions.Types.GET_TEACHERS_REQUEST, fetchTeachers);
-  yield takeLatest(actions.Types.INSERT_TEACHER_REQUEST, fetchTeachers);
+  yield takeLatest(actions.Types.INSERT_TEACHER_REQUEST, insertTeacher);
 }

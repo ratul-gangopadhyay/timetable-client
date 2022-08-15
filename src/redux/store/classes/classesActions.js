@@ -5,7 +5,7 @@ export const Types = {
   INSERT_CLASS_REQUEST: 'INSERT_CLASS_REQUEST',
   INSERT_CLASS_SUCCESS: 'INSERT_CLASS_SUCCESS',
   INSERT_CLASS_FAILURE: 'INSERT_CLASS_FAILURE',
-  STORE_CLASS:'STORE_CLASS',
+  STORE_CLASS: 'STORE_CLASS',
 };
 
 export const getClassesRequest = () => ({
@@ -41,4 +41,3 @@ export const storeClass = (classData) => ({
   type: Types.STORE_CLASS,
   payload: { classData },
 });
-

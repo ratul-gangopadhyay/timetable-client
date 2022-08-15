@@ -9,6 +9,7 @@ const initialState = {
 export const classesReducer = (state = initialState, action) => {
   switch (action.type) {
     case Types.GET_CLASSES_REQUEST:
+    case Types.INSERT_CLASS_REQUEST:
       return {
         ...state,
         loading: true,
@@ -26,11 +27,6 @@ export const classesReducer = (state = initialState, action) => {
         classes: [],
         error: action.payload.error,
       };
-    case Types.INSERT_CLASS_REQUEST:
-      return {
-        ...state,
-        loading: true,
-      };
     case Types.INSERT_CLASS_FAILURE:
       return {
         ...state,
@@ -40,13 +36,13 @@ export const classesReducer = (state = initialState, action) => {
     case Types.STORE_CLASS:
       return {
         ...state,
-        loading:false,
+        loading: false,
         classes: [
           ...state.classes,
           {
-            ...action.payload.classData
-          }
-        ]
+            ...action.payload.classData,
+          },
+        ],
       };
     default:
       return state;

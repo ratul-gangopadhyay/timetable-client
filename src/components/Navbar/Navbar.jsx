@@ -1,12 +1,10 @@
 import React from 'react';
 import AppLogo from '../AppLogo';
 
-
 export const Navbar = () => {
   return (
     <Nav>
       <NavLink to='/'>
-        {/* <h1>Timetable Maker</h1> */}
         <AppLogo />
       </NavLink>
       <Bars />

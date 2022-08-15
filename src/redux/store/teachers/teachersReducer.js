@@ -9,6 +9,7 @@ const initialState = {
 export const teachersReducer = (state = initialState, action) => {
   switch (action.type) {
     case Types.GET_TEACHERS_REQUEST:
+    case Types.INSERT_TEACHER_REQUEST:
       return {
         ...state,
         loading: true,
@@ -26,11 +27,6 @@ export const teachersReducer = (state = initialState, action) => {
         teachers: [],
         error: action.payload.error,
       };
-    case Types.INSERT_TEACHER_REQUEST:
-      return {
-        ...state,
-        loading: true,
-      };
     case Types.INSERT_TEACHER_FAILURE:
       return {
         ...state,
@@ -42,9 +38,9 @@ export const teachersReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         teachers: [
-          ...state.classes,
+          ...state.teachers,
           {
-            ...action.payload.teachers,
+            ...action.payload.teacher,
           },
         ],
       };

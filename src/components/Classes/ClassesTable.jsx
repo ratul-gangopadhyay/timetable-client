@@ -10,7 +10,7 @@ const ClassesTable = ({ columns, rows, pageSize, setPageSize }) => (
       fontWeight: 'bold',
       boxShadow: 2,
       border: 2,
-      m : 2,
+      m: 2,
       borderColor: '#313437',
       '& .MuiDataGrid-cell:hover': {
         color: 'black',

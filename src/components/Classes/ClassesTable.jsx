@@ -20,7 +20,7 @@ const ClassesTable = ({ columns, rows, pageSize, setPageSize }) => (
     columns={columns}
     pageSize={pageSize}
     onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
-    rowsPerPageOptions={[5, 10]}
+    rowsPerPageOptions={[5, 10, 15, 20]}
     checkboxSelection
     density='compact'
   />

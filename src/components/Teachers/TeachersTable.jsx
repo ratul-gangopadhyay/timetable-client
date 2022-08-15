@@ -20,7 +20,7 @@ const TeachersTable = ({ columns, rows, pageSize, setPageSize }) => (
     columns={columns}
     pageSize={pageSize}
     onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
-    rowsPerPageOptions={[2, 3, 5]}
+    rowsPerPageOptions={[5, 10, 15, 20]}
     checkboxSelection
     density='comfortable'
   />

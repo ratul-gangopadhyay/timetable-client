@@ -5,8 +5,10 @@ import './teacherStyles.css';
 import TeachersTable from './TeachersTable';
 import teachersSelector from '../../redux/store/teachers/teachersSelector';
 import * as teachersActions from '../../redux/store/teachers/teachersActions';
+import { useNavigate } from 'react-router';
 
 const TeachersTableContainer = () => {
+  const navigate = useNavigate();
   const [pageSize, setPageSize] = useState(15);
   const dispatch = useDispatch();
 
@@ -48,6 +50,12 @@ const TeachersTableContainer = () => {
   const rows = useSelector(teachersSelector.teachers.list);
   const loading = useSelector(teachersSelector.teachers.loading);
 
+  const openTeacher = (event) => {
+    console.log(event);
+    const { id, row } = event;
+    navigate(id);
+  };
+
   if (!loading) {
     return (
       <TeachersTable
@@ -55,6 +63,7 @@ const TeachersTableContainer = () => {
         rows={rows}
         pageSize={pageSize}
         setPageSize={setPageSize}
+        openTeacher={openTeacher}
       />
     );
   }

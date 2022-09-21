@@ -13,10 +13,10 @@ const AdminCard = () => {
           <CardContent
             sx={{
               height: 200,
-              color: 'white',
-              backgroundColor: '#3f5060',
+              color: '#170b2b',
+              backgroundColor: '#747a81',
               '&:hover': {
-                backgroundColor: '#181f25',
+                backgroundColor: '#5d6368',
                 transition: '200ms ease-in-out',
               },
             }}
@@ -24,7 +24,7 @@ const AdminCard = () => {
             <Typography gutterBottom variant='h4' component='div'>
               Admin
             </Typography>
-            <Typography gutterBottom variant='body1' color='text.primary'>
+            <Typography gutterBottom variant='body1' color='#000'>
               Admin services like adding teachers and classes. Creating the
               timetable.
             </Typography>

@@ -5,6 +5,7 @@ import ClassesContainer from '../Classes/Classes.container';
 import GuestContainer from '../Guest/Guest.container';
 import TimetableHomeContainer from '../HomePage/TimetableHome.container';
 import RoutineContainer from '../Routine/Routine.container';
+import TeacherDetailsContainer from '../Teachers/TeacherDetails.container';
 import TeachersContainer from '../Teachers/Teachers.container';
 
 const TimetableRouter = () => {
@@ -15,6 +16,7 @@ const TimetableRouter = () => {
         <Route path='admin' element={<AdminContainer />}>
           <Route index element={<TeachersContainer />} />
           <Route path='teachers' element={<TeachersContainer />} />
+          <Route path='teachers/:id' element={<TeacherDetailsContainer />} />
           <Route path='classes' element={<ClassesContainer />} />
           <Route path='routine' element={<RoutineContainer />} />
         </Route>

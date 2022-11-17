@@ -1,7 +1,13 @@
 import * as React from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 
-const TeachersTable = ({ columns, rows, pageSize, setPageSize }) => (
+const TeachersTable = ({
+  columns,
+  rows,
+  pageSize,
+  setPageSize,
+  openTeacher,
+}) => (
   <DataGrid
     sx={{
       height: 450,
@@ -11,18 +17,21 @@ const TeachersTable = ({ columns, rows, pageSize, setPageSize }) => (
       border: 2,
       m: 2,
       borderColor: '#313437',
-      '& .MuiDataGrid-cell:hover': {
-        color: 'black',
+      '& .MuiDataGrid-row:hover': {
+        color: '#318588',
+        cursor: 'pointer',
       },
+      '& .css-78c6dr-MuiToolbar-root-MuiTablePagination-toolbar': {
+        color: '#fff'
+      }
     }}
-    getRowHeight={() => 'auto'}
+    onRowClick={openTeacher}
     rows={rows}
     columns={columns}
     pageSize={pageSize}
     onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
     rowsPerPageOptions={[5, 10, 15, 20]}
-    checkboxSelection
-    density='comfortable'
+    density='standard'
   />
 );
 

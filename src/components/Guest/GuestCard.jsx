@@ -13,10 +13,10 @@ const Guest = () => {
           <CardContent
             sx={{
               height: 200,
-              color: 'white',
-              backgroundColor: 'rgba(28, 144, 94, 0.937)',
+              color: '#170b2b',
+              backgroundColor: 'rgba(75, 207, 150, 0.937)',
               '&:hover': {
-                backgroundColor: 'rgba(28, 105, 144, 0.989)',
+                backgroundColor: 'rgba(28, 143, 95, 0.937)',
                 transition: '200ms ease-in-out',
               },
             }}
@@ -24,7 +24,7 @@ const Guest = () => {
             <Typography gutterBottom variant='h4' component='div'>
               Guest
             </Typography>
-            <Typography variant='body1' color='text.primary'>
+            <Typography variant='body1' color='#000'>
               View all timetables
             </Typography>
           </CardContent>

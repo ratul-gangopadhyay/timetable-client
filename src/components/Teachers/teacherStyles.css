@@ -37,4 +37,51 @@
   position: fixed;
   right: 1rem;
   bottom: 1.2rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+.teacher-details-container {
+  border-radius: 0.5rem;
+  /* border: 1px solid white; */
+  margin: 1rem 1rem 1rem 1rem;
+  height: 75vh;
+  background-color: #313437;
+}
+
+.teacher-detail-header {
+  /* border: 1px solid white; */
+  display: flex;
+  justify-content: space-between;
+  border-radius: 0.5rem;
+  margin: 1rem 1rem 1rem 1rem;
+  padding: 1rem 1rem 1rem 1rem;
+  height: 15vh;
+  font-size: 300%;
+}
+
+.teacher-detail-non-header {
+  /* border: 1px solid white; */
+  border-radius: 0.5rem;
+  margin: 1rem 1rem 1rem 1rem;
+  padding: 1rem 1rem 1rem 1rem;
+  height: 10vh;
+  font-size: 150%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.teacher-age {
+  font-size: x-large;
+  padding-bottom: 1px;
+}
+
+table, th {
+  /* border: 1px solid white; */
+  border-collapse: collapse;
+  /* margin-left: auto; */
+  margin-right: auto;
+  width: 97.5vw;
+}
+
+tr {
+  width: 10px;;
 }

@@ -14,9 +14,9 @@ const Guest = () => {
             sx={{
               height: 200,
               color: '#170b2b',
-              backgroundColor: 'rgba(75, 207, 150, 0.937)',
+              backgroundColor: 'rgba(52, 198, 242, 0.937)',
               '&:hover': {
-                backgroundColor: 'rgba(28, 143, 95, 0.937)',
+                backgroundColor: 'rgba(27, 125, 155, 0.943)',
                 transition: '200ms ease-in-out',
               },
             }}

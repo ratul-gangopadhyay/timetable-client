@@ -30,11 +30,11 @@
 }
 
 .admin-nav-items.active {
-  color: rgb(107, 101, 128);
+  color: rgb(88, 88, 89);
   transition: 100ms ease-in-out;
 }
 
 .admin-nav-items:hover {
-  color: rgb(122, 114, 155);
+  color: rgb(45, 44, 46);
   transition: 400ms ease-in-out;
 }

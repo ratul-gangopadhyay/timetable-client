@@ -5,7 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { Button } from '@mui/material';
 import './classesStyles.css';
 
-const style = {
+export const style = {
   label: {
     color: '#fff',
     fontWeight: 'bolder',
@@ -76,7 +76,7 @@ const ClassForm = ({
             label='Standard'
             value={classData?.standard}
             onChange={handleChange}
-            helperText='Please select your currency'
+            helperText='Please select standard'
           >
             {standards.map((option) => (
               <MenuItem key={option.value} value={option.value}>
@@ -93,7 +93,7 @@ const ClassForm = ({
             label='Section'
             value={classData?.section}
             onChange={handleChange}
-            helperText='Please select your currency'
+            helperText='Please select section'
           >
             {sections.map((option) => (
               <MenuItem key={option.value} value={option.value}>

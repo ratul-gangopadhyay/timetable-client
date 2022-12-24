@@ -3,84 +3,83 @@ import ClassForm from './ClassForm';
 import { useDispatch } from 'react-redux';
 import * as classesActions from '../../redux/store/classes/classesActions';
 
+export const sections = [
+  {
+    value: '',
+    label: 'No Selection',
+  },
+  {
+    value: 'A',
+    label: 'A',
+  },
+  {
+    value: 'B',
+    label: 'B',
+  },
+  {
+    value: 'C',
+    label: 'C',
+  },
+  {
+    value: 'D',
+    label: 'D',
+  },
+];
+export const standards = [
+  {
+    value: '',
+    label: 'No Selection',
+  },
+  {
+    value: 'I',
+    label: 'I',
+  },
+  {
+    value: 'II',
+    label: 'II',
+  },
+  {
+    value: 'III',
+    label: 'III',
+  },
+  {
+    value: 'IV',
+    label: 'IV',
+  },
+  {
+    value: 'V',
+    label: 'V',
+  },
+  {
+    value: 'VI',
+    label: 'VI',
+  },
+  {
+    value: 'VII',
+    label: 'VII',
+  },
+  {
+    value: 'VIII',
+    label: 'VIII',
+  },
+  {
+    value: 'IX',
+    label: 'IX',
+  },
+  {
+    value: 'X',
+    label: 'X',
+  },
+  {
+    value: 'XI',
+    label: 'XI',
+  },
+  {
+    value: 'XII',
+    label: 'XII',
+  },
+];
 const ClassFormContainer = ({ handleClose }) => {
-  const sections = [
-    {
-      value: '',
-      label: 'No Selection',
-    },
-    {
-      value: 'A',
-      label: 'A',
-    },
-    {
-      value: 'B',
-      label: 'B',
-    },
-    {
-      value: 'C',
-      label: 'C',
-    },
-    {
-      value: 'D',
-      label: 'D',
-    },
-  ];
-  const standards = [
-    {
-      value: '',
-      label: 'No Selection',
-    },
-    {
-      value: 'I',
-      label: 'I',
-    },
-    {
-      value: 'II',
-      label: 'II',
-    },
-    {
-      value: 'III',
-      label: 'III',
-    },
-    {
-      value: 'IV',
-      label: 'IV',
-    },
-    {
-      value: 'V',
-      label: 'V',
-    },
-    {
-      value: 'VI',
-      label: 'VI',
-    },
-    {
-      value: 'VII',
-      label: 'VII',
-    },
-    {
-      value: 'VIII',
-      label: 'VIII',
-    },
-    {
-      value: 'IX',
-      label: 'IX',
-    },
-    {
-      value: 'X',
-      label: 'X',
-    },
-    {
-      value: 'XI',
-      label: 'XI',
-    },
-    {
-      value: 'XII',
-      label: 'XII',
-    },
-  ];
-
   const initialState = {
     standard: '',
     section: '',

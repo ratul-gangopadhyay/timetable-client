@@ -18,7 +18,10 @@ const TimetableRouter = () => {
           <Route path='teachers' element={<TeachersContainer />} />
           <Route path='teachers/:id' element={<TeacherDetailsContainer />} />
           <Route path='classes' element={<ClassesContainer />} />
-          <Route path='routine' element={<RoutineContainer />} />
+          <Route
+            path='routine'
+            element={<RoutineContainer />}
+          />
         </Route>
         <Route path='/guest' element={<GuestContainer />} />
       </Routes>

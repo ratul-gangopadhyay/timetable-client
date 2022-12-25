@@ -14,9 +14,9 @@ const AdminCard = () => {
             sx={{
               height: 200,
               color: '#170b2b',
-              backgroundColor: 'rgba(90, 132, 229, 0.937)',
+              backgroundColor: 'rgba(57, 148, 108, 0.8)',
               '&:hover': {
-                backgroundColor: 'rgba(27, 58, 131, 0.937)',
+                backgroundColor: 'rgba(28, 81, 58, 0.8)',
                 transition: '200ms ease-in-out',
               },
             }}

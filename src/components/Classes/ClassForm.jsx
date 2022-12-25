@@ -14,6 +14,9 @@ export const style = {
     color: '#fff',
     fontWeight: 'bolder',
   },
+  '& .Mui-disabled': {
+    WebkitTextFillColor: '#447492',
+  },
   '& .MuiInputBase-root': {
     color: '#fff',
     fontWeight: 'bolder',
@@ -37,6 +40,20 @@ export const style = {
     },
     '&.Mui-focused fieldset': {
       borderColor: '#fff',
+      fontWeight: 'bolder',
+    },
+  },
+  '& .MuiOutlinedInput-root.Mui-disabled': {
+    '& fieldset': {
+      borderColor: '#324f61',
+      fontWeight: 'bolder',
+    },
+    '&:hover fieldset': {
+      borderColor: '#324f61',
+      fontWeight: 'bolder',
+    },
+    '&.Mui-focused fieldset': {
+      borderColor: '#324f61',
       fontWeight: 'bolder',
     },
   },

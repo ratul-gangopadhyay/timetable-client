@@ -2,6 +2,7 @@ import React from 'react';
 import { KeyboardArrowLeft } from '@mui/icons-material';
 import { Button } from '@mui/material';
 import './guestStyles.css';
+import RoutineContainer from '../Routine/Routine.container';
 
 const Guest = ({ onBack }) => {
   return (
@@ -18,13 +19,7 @@ const Guest = ({ onBack }) => {
           Back
         </Button>
       </div>
-      <h1
-        style={{
-          textAlign: 'center',
-        }}
-      >
-        Guest
-      </h1>
+      <RoutineContainer viewOnly />
     </>
   );
 };

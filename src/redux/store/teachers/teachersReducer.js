@@ -27,6 +27,23 @@ export const teachersReducer = (state = initialState, action) => {
         teachers: [],
         error: action.payload.error,
       };
+    case Types.GET_TEACHER_REQUEST:
+      return {
+        ...state,
+        loading: true,
+      };
+    case Types.GET_TEACHER_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        [action.payload.teacher.id]: action.payload.teacher,
+      };
+    case Types.GET_TEACHER_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload.error,
+      };
     case Types.INSERT_TEACHER_FAILURE:
       return {
         ...state,

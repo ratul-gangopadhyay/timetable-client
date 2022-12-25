@@ -51,8 +51,7 @@ const TeachersTableContainer = () => {
   const loading = useSelector(teachersSelector.teachers.loading);
 
   const openTeacher = (event) => {
-    console.log(event);
-    const { id, row } = event;
+    const { id } = event;
     navigate(id);
   };
 

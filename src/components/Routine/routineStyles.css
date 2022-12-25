@@ -1,6 +1,6 @@
 .grid-container {
   display: grid;
-  grid-template-columns: 10rem 10rem 10rem 10rem 10rem 10rem 10rem 10rem;
+  grid-template-columns: 5rem 9.5rem 9.5rem 9.5rem 9.5rem 9.5rem 9.5rem 9.5rem 9.5rem;
   background-color: black;
   padding: 0 1.5rem 1rem 1.5rem;
   justify-content: center;
@@ -9,26 +9,37 @@
 .grid-container-head {
   display: grid;
   height: 1rem;
-  grid-template-columns: 10rem 10rem 10rem 10rem 10rem 10rem 10rem 10rem;
+  grid-template-columns: 5rem 9.5rem 9.5rem 9.5rem 9.5rem 9.5rem 9.5rem 9.5rem 9.5rem;
   background-color: black;
-  padding: 0 1.5rem 3.5rem 1.5rem;
+  padding: 0 1.5rem 3rem 1.5rem;
   justify-content: center;
 }
 
 .grid-item {
   background-color: rgba(0, 0, 0, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.8);
-  /* border-radius: 5px; */
   padding: 15px;
-  font-size: 30px;
+  height: 4.5rem;
+  font-size: 18px;
   text-align: center;
+  overflow-wrap: break-word;
+}
+
+.grid-item:hover {
+  background-color: rgba(49, 47, 47, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  padding: 15px;
+  font-size: 19px;
+  text-align: center;
+  overflow-wrap: break-word;
+  cursor: pointer;
 }
 
 .grid-item-head {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(59, 100, 82, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.8);
   padding: 10px;
-  font-size: 30px;
+  font-size: 22px;
   text-align: center;
 }
 
@@ -36,4 +47,11 @@
   display: flex;
   justify-content: center;
   padding: 1rem;
+}
+
+.error-text {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  color: red;
 }

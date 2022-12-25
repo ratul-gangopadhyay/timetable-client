@@ -17,7 +17,7 @@ const TeacherFormModal = ({ open, handleOpen, handleClose }) => {
           Add New Teacher
         </Button>
       </div>
-      <FormModal open={open} handleClose={handleClose}>
+      <FormModal open={open} handleClose={handleClose} modalHeight='93vh'>
         <TeacherFormContainer handleClose={handleClose} />
       </FormModal>
     </>

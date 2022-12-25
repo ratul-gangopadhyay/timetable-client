@@ -8,5 +8,6 @@ export default {
     list: getTeachers,
     error: (state) => state?.teachers?.error,
     byId: getTeacherById,
+    byTeacherId: (state, id) => state?.teachers?.[id],
   },
 };

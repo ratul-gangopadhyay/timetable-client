@@ -1,10 +1,22 @@
-import { Box, MenuItem, TextField } from '@mui/material';
+import { Box, Button, MenuItem, TextField } from '@mui/material';
 import React from 'react';
 import { style } from '../Classes/ClassForm';
 import { sections, standards } from '../Classes/ClassForm.container';
 import './routineStyles.css';
+import { weekDays, periods } from '../../constants/enumConstants.js';
+import SlotContainer from './slot/Slot.container';
 
-const Routine = ({ standard, section, onSetSection, onSetStandard }) => {
+const Routine = ({
+  standard,
+  section,
+  onSetSection,
+  onSetStandard,
+  getRoutine,
+  routine,
+  showRoutine,
+  error,
+  viewOnly,
+}) => {
   return (
     <>
       <div className='timetable-header'>
@@ -49,12 +61,34 @@ const Routine = ({ standard, section, onSetSection, onSetStandard }) => {
               </MenuItem>
             ))}
           </TextField>
+          <Button
+            sx={{
+              backgroundColor: '#586680',
+              color: '#fff',
+              margin: '1rem',
+              '&:hover': {
+                backgroundColor: '#37393d',
+                boxShadow: 'none',
+              },
+              '&:disabled': {
+                backgroundColor: '#cccccc1c',
+                color: '#66666688',
+              },
+            }}
+            variant='contained'
+            size='small'
+            disabled={!(section && standard)}
+            onClick={getRoutine}
+          >
+            Get Timetable
+          </Button>
         </Box>
       </div>
 
-      {standard && section ? (
+      {standard && section && showRoutine && !error ? (
         <div>
           <div class='grid-container-head'>
+            <div class='grid-item-head'>DAY</div>
             <div class='grid-item-head'>1ST</div>
             <div class='grid-item-head'>2ND</div>
             <div class='grid-item-head'>3RD</div>
@@ -65,51 +99,30 @@ const Routine = ({ standard, section, onSetSection, onSetStandard }) => {
             <div class='grid-item-head'>8TH</div>
           </div>
           <div class='grid-container'>
-            <div class='grid-item'>1</div>
-            <div class='grid-item'>2</div>
-            <div class='grid-item'>3</div>
-            <div class='grid-item'>4</div>
-            <div class='grid-item'>5</div>
-            <div class='grid-item'>6</div>
-            <div class='grid-item'>7</div>
-            <div class='grid-item'>8</div>
-            <div class='grid-item'>9</div>
-            <div class='grid-item'>10</div>
-            <div class='grid-item'>11</div>
-            <div class='grid-item'>12</div>
-            <div class='grid-item'>13</div>
-            <div class='grid-item'>14</div>
-            <div class='grid-item'>15</div>
-            <div class='grid-item'>16</div>
-            <div class='grid-item'>17</div>
-            <div class='grid-item'>18</div>
-            <div class='grid-item'>19</div>
-            <div class='grid-item'>21</div>
-            <div class='grid-item'>21</div>
-            <div class='grid-item'>22</div>
-            <div class='grid-item'>23</div>
-            <div class='grid-item'>24</div>
-            <div class='grid-item'>25</div>
-            <div class='grid-item'>26</div>
-            <div class='grid-item'>27</div>
-            <div class='grid-item'>28</div>
-            <div class='grid-item'>29</div>
-            <div class='grid-item'>30</div>
-            <div class='grid-item'>31</div>
-            <div class='grid-item'>32</div>
-            <div class='grid-item'>33</div>
-            <div class='grid-item'>34</div>
-            <div class='grid-item'>35</div>
-            <div class='grid-item'>36</div>
-            <div class='grid-item'>37</div>
-            <div class='grid-item'>38</div>
-            <div class='grid-item'>39</div>
-            <div class='grid-item'>40</div>
+            {weekDays.map((day) => (
+              <>
+                <div class='grid-item'>{day}</div>
+                {periods.map((period) => (
+                  <SlotContainer
+                    section={section}
+                    standard={standard}
+                    day={day}
+                    period={period}
+                    slotDetails={routine?.[day]?.[period]}
+                    viewOnly={viewOnly}
+                  />
+                ))}
+              </>
+            ))}
           </div>
         </div>
+      ) : error ? (
+        <div className='error-text'>{error?.response?.data?.errorMessage}</div>
       ) : (
         <div className='timetable-header'>
-          Please select both standard and section for the timetable you want
+          {standard && section
+            ? ''
+            : 'Please select both standard and section for the timetable you want'}
         </div>
       )}
     </>

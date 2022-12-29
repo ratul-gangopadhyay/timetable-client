@@ -1,6 +1,10 @@
 import { takeLatest, call, put } from 'redux-saga/effects';
 import * as actions from './teachersActions';
-import { getTeachers, addTeacher } from '../../../service/teachersService';
+import {
+  getTeachers,
+  getTeacher,
+  addTeacher,
+} from '../../../service/teachersService';
 import { toast, Zoom } from 'react-toastify';
 import { showSpinner, hideSpinner } from '../common/commonActions';
 
@@ -22,6 +26,7 @@ export function* fetchTeachers() {
       transition: Zoom,
     });
   } catch (error) {
+    yield put(hideSpinner());
     yield toast.error(
       error?.response?.data?.errorMessage || 'Some Error Occured',
       {
@@ -37,6 +42,32 @@ export function* fetchTeachers() {
       }
     );
     yield put(actions.getTeachersFailure(error));
+  }
+}
+
+export function* fetchTeacher({ params: { teacherId } }) {
+  try {
+    yield put(showSpinner('Loading Teacher...'));
+    const result = yield call(getTeacher, teacherId);
+    yield put(hideSpinner());
+    yield put(actions.getTeacherSuccess(result.data));
+  } catch (error) {
+    yield put(hideSpinner());
+    yield toast.error(
+      error?.response?.data?.errorMessage || 'Some Error Occured',
+      {
+        position: 'top-right',
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'dark',
+        transition: Zoom,
+      }
+    );
+    yield put(actions.getTeacherFailure(error));
   }
 }
 
@@ -56,6 +87,7 @@ export function* insertTeacher({ payload: { teacher } }) {
     });
     yield put(actions.storeTeacher(response.data));
   } catch (error) {
+    yield put(hideSpinner());
     yield toast.error(
       error?.response?.data?.errorMessage || 'Some Error Occurred',
       {
@@ -76,5 +108,6 @@ export function* insertTeacher({ payload: { teacher } }) {
 
 export function* teachersSaga() {
   yield takeLatest(actions.Types.GET_TEACHERS_REQUEST, fetchTeachers);
+  yield takeLatest(actions.Types.GET_TEACHER_REQUEST, fetchTeacher);
   yield takeLatest(actions.Types.INSERT_TEACHER_REQUEST, insertTeacher);
 }

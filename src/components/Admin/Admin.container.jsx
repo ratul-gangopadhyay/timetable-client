@@ -5,7 +5,7 @@ import Admin from './Admin';
 const AdminContainer = () => {
   document.title = 'Admin';
   const navigate = useNavigate();
-  useEffect(() => navigate('teachers'), []);
+  useEffect(() => navigate('routine'), []);
   return <Admin onBack={() => navigate('/')} />;
 };
 

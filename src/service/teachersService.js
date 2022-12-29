@@ -10,13 +10,19 @@ export const getTeachers = () => {
   );
 };
 
-export const addTeacher = (requestBody) => {
-  return axios.post(
-    '/api/time-table/teachers',
-    requestBody,
+export const getTeacher = (teacherId) => {
+  return axios.get(
+    `/api/time-table/teachers/${teacherId}`,
+    {},
     {
       accept: 'application/json',
-      'content-type': 'application/json',
     }
   );
+};
+
+export const addTeacher = (requestBody) => {
+  return axios.post('/api/time-table/teachers', requestBody, {
+    accept: 'application/json',
+    'content-type': 'application/json',
+  });
 };

@@ -22,6 +22,7 @@ export function* fetchClasses() {
       transition: Zoom,
     });
   } catch (error) {
+    yield put(hideSpinner());
     yield toast.error(
       error?.response?.data?.errorMessage || 'Some Error Occurred',
       {
@@ -56,6 +57,7 @@ export function* insertClass({ payload: { classData } }) {
     });
     yield put(actions.storeClass(response.data));
   } catch (error) {
+    yield put(hideSpinner());
     yield toast.error(
       error?.response?.data?.errorMessage || 'Some Error Occurred',
       {

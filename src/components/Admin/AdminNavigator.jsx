@@ -6,14 +6,14 @@ const AdminNavigator = () => {
   return (
     <>
       <nav className='admin-nav'>
+        <NavLink className='admin-nav-items' to='routine'>
+          Routine
+        </NavLink>
         <NavLink className='admin-nav-items' to='teachers'>
           Teachers
         </NavLink>
         <NavLink className='admin-nav-items' to='classes'>
           Classes
-        </NavLink>
-        <NavLink className='admin-nav-items' to='routine'>
-          Routine
         </NavLink>
       </nav>
       <Outlet />

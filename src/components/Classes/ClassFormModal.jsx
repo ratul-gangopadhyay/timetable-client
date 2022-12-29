@@ -17,7 +17,7 @@ const ClassFormModal = ({ open, handleOpen, handleClose }) => {
           Add New Class
         </Button>
       </div>
-      <FormModal open={open} handleClose={handleClose}>
+      <FormModal open={open} handleClose={handleClose} modalHeight='50vh'>
         <ClassFormContainer handleClose={handleClose} />
       </FormModal>
     </>

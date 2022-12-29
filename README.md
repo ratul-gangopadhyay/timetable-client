@@ -1,15 +1,17 @@
-# timetable-web
+# timetable-client
 
 React application providing a easy to use interface for creating and managing your timetable
 
-![image](https://user-images.githubusercontent.com/111196705/184526822-50ba2a93-d9ad-4047-9265-527e3895c199.png)
+![image](https://user-images.githubusercontent.com/111196705/209922268-82a7dfa3-908f-4436-a84e-14f992db48a8.png)
+![image](https://user-images.githubusercontent.com/111196705/209922584-3d7395c2-1314-4d6d-84d6-4df8ca41ae03.png)
+
 
 ## Getting started.
 
-### Setting up `timetable-web` project:
+### Setting up `timetable-client` project:
 1. Clone this project in your local machine using the following command:
 ```ruby
-git clone https://github.com/ratul-gangopadhyay/timetable-web.git
+git clone https://github.com/ratul-gangopadhyay/timetable-client.git
 ```
 
 2. Install `node_modules` by running the following commands:
@@ -23,9 +25,9 @@ npm start
 ```
 **Note**: By default it will start on `localhost:3000`
 
-### Setting up the backend server `timetable-api`:
-1. Clone the project [timetable-api](https://github.com/ratul-gangopadhyay/timetable-api) in your local machine using the below command:
+### Setting up the backend server `timetable-server`:
+1. Clone the project [timetable-server](https://github.com/ratul-gangopadhyay/timetable-server) in your local machine using the below command:
 ```ruby
-git clone https://github.com/ratul-gangopadhyay/timetable-api.git
+git clone https://github.com/ratul-gangopadhyay/timetable-server.git
 ```
-2. Follow the [README.md](https://github.com/ratul-gangopadhyay/timetable-api/blob/master/README.md) instructions given to run this project.
+2. Follow the [README.md](https://github.com/ratul-gangopadhyay/timetable-server/blob/master/README.md) instructions given to run this project.

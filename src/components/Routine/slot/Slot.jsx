@@ -43,10 +43,9 @@ const Slot = ({
         </div>
         <Tooltip
           anchorId={`${day}-${period}-disabled`}
-          html={`${slotDetails?.teacherName || 'Not Assigned'}<br/>${
-            _.capitalize(slotDetails?.subject).replaceAll('_', ' ') ||
-            'Not Assigned'
-          }`}
+          html={`${
+            slotDetails?.teacherName || 'Not Assigned'
+          }<br/>${_.capitalize(slotDetails?.subject).replaceAll('_', ' ')}`}
           place='top'
           style={{
             backgroundColor: '#237ab0',
